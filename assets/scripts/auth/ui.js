@@ -22,6 +22,8 @@ const signInFailure = function (error) {
 }
 const signOutSuccess = function (response) {
   $('#message').text('Signed out.')
+  $('.authenticated').hide()
+  $('.unauthenticated').show()
 }
 
 const signOutFailure = function (error) {

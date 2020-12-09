@@ -25,7 +25,7 @@ const signOut = function () {
     }
   })
 }
-const changePassword = function () {
+const changePassword = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',

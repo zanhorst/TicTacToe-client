@@ -13,21 +13,31 @@
     </head>
     <body>
       <h1>Tic Tac Toe</h1>
+      <div ="unauthenticated">
         <form id="sign-up">
-          <div class="form-group">
-            <label for="inputEmail">Email address</label>
-            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">Please do not use a real email.</small>
+          <div>
+            <label for="inputEmail">Email Address</label>
+            <input type="email" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp">Please do not use a real email.</small>
           </div>
-          <div class="form-group">
-            <label for="inputEmail">Password</label>
-            <input type="password" class="form-control" id="inputEmail" placeholder="Password">
-          </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          <div>
+            <label for="inputPassword">Password</label>
+            <input type="password" id="inputPassword" placeholder="Enter Password">
+            <input type="password" id="inputPasswordConfirm" placeholder="Confirm password">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <form id="sign-in">
+          <div>
+            <label for="inputEmail">Email address</label>
+            <input type="email" id="inputEmail" placeholder="Enter Email">
+          </div>
+          <div>
+            <label for="inputPassword">Password</label>
+            <input type="password" id="inputPasswprd" placeholder="Enter Password">
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </body>
 </html>

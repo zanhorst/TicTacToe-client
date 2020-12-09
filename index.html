@@ -15,7 +15,7 @@
       <h1>Tic Tac Toe</h1>
       <p id="message"></p>
       <div class="unauthenticated">
-        <form id="sign-up">Sign up
+        <form id="sign-up">Sign up:
           <label for="inputEmail">Email Address:</label>
           <input type="email" placeholder="Enter email" name="credentials[email]">
           <label for="inputPassword">Password:</label>
@@ -26,7 +26,7 @@
 
           <button type="submit">Sign up</button>
         </form>
-        <form id="sign-in">Sign in
+        <form id="sign-in">Sign in:
           <div>
             <label for="inputEmail">Email address</label>
             <input type="email" id="inputEmail" placeholder="Enter Email" name="credentials[email]">
@@ -39,9 +39,6 @@
         </form>
       </div>
       <div class="authenticated">
-        <form id="sign-out">
-          <button type="submit">Submit</button>
-        </form>
         <form id="change-password">
           <div>
             <input type="password" placeholder="Old Password" name="password[old]">
@@ -50,6 +47,9 @@
             <input type="password" placeholder="New Password" name="password[new]">
           </div>
           <button type="submit">Submit</button>
+        </form>
+        <form id="sign-out">Sign out:
+          <button type="submit">Sign Out</button>
         </form>
       </div>
     </body>

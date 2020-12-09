@@ -1,6 +1,6 @@
 'use strict'
 const store = require('./../store.js')
-
+$('.authenticated').hide()
 const signUpSuccess = function (response) {
   $('#message').text('Signed up. Please log in.')
 }
@@ -10,6 +10,11 @@ const signUpFailure = function (error) {
 }
 const signInSuccess = function (response) {
   $('#message').text('Signed in.')
+  $('.unauthenticated').hide()
+  $('.authenticated').show()
+  $('form').trigger('reset')
+  console.log(store)
+  store.user = response.user
 }
 
 const signInFailure = function (error) {

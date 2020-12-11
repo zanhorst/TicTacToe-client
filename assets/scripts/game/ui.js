@@ -1,13 +1,21 @@
 'use strict'
+const store = require('./../store')
 
-const newGameSuccess = function (response) {
+const newGameSuccess = function (event) {
   $('#message').text('Game created.')
-  $('.container').show()
+  $('#game-board').show()
+  console.log(event)
+  store.game = event.game
 }
 const newGameFailure = function (error) {
   $('#message').text('Game could not be created. Error: ' + error.responseJSON.message)
+  console.log(error)
+}
+const updateGameSuccess = function (event) {
+  $('#message').text('Move successful.')
 }
 module.exports = {
   newGameSuccess,
-  newGameFailure
+  newGameFailure,
+  updateGameSuccess
 }

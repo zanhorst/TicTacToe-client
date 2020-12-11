@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Tic Tac Toe!</title>
+  <head>
+    <title>Tic Tac Toe!</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -10,63 +10,53 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Tic Tac Toe</h1>
-      <p id="message"></p>
-      <div class="unauthenticated">
-        <form id="sign-up">Sign up:
-          <div>
-            <label for="inputEmail">Email Address:</label>
-            <input type="email" placeholder="Enter email" name="credentials[email]">
-            <label for="inputPassword">Password:</label>
-            <input type="password" placeholder="Enter Password" name="credentials[password]">
-            <label for="inputPasswordConfirm">Confirm password:</label>
-            <input type="password" placeholder="Confirm password" name="credentials[password_confirmation]">
-            <button type="submit">Sign up</button>
-          </div>
-        </form>
-        <form id="sign-in">Sign in:
-          <div>
-            <label for="inputEmail">Email address</label>
-            <input type="email" placeholder="Enter Email" name="credentials[email]">
-          </div>
-          <div>
-            <label for="inputPassword">Password</label>
-            <input type="password" placeholder="Enter Password" name="credentials[password]">
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-      <div class="authenticated">
-        <form id="change-password">
-          <input type="password" placeholder="Old Password" name="passwords[old]">
-          <input type="password" placeholder="New Password" name="passwords[new]">
-          <button type="submit">Submit</button>
-        </form>
-        <form id="sign-out">Sign out:
-          <button type="submit">Sign Out</button>
-        </form>
-      </div>
-      <div class="authenticated">
-        <form id="new-game">
-          <button type="click">Create Game</button>
-          <div class="container">
-            <div class="row board">
-              <div class="col-4 box"></div>
-              <div class="col-4 box"></div>
-              <div class="col-4 box"></div>
+  </head>
+  <body>
+    <h1>Tic Tac Toe</h1>
+    <p id="message"></p>
+    <div class="unauthenticated">
+      <form id="sign-up">Sign up:
+        <label for="inputEmail">Email Address:</label>
+        <input type="email" placeholder="Enter email" name="credentials[email]">
+        <label for="inputPassword">Password:</label>
+        <input type="password" placeholder="Enter Password" name="credentials[password]">
+        <label for="inputPasswordConfirm">Confirm password:</label>
+        <input type="password" placeholder="Confirm password" name="credentials[password_confirmation]">
+        <button type="submit">Sign up</button>
+      </form>
+      <form id="sign-in">Sign in:
+        <label for="inputEmail">Email address</label>
+        <input type="email" placeholder="Enter Email" name="credentials[email]">
+        <label for="inputPassword">Password</label>
+        <input type="password" placeholder="Enter Password" name="credentials[password]">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="authenticated">
+      <form id="change-password">Change Password:
+        <input type="password" placeholder="Old Password" name="passwords[old]">
+        <input type="password" placeholder="New Password" name="passwords[new]">
+        <button type="submit">Submit</button>
+      </form>
+      <form id="sign-out">Sign out:
+        <button type="submit">Sign Out</button>
+      </form>
+      <form id="new-game">
+        <button type="click">Create Game</button>
+      </form>
+      <div id="game-board" class="row">
+        <button type="click" class="col-4 box" cell-index="0"></button>
+        <button type="click" class="col-4 box" cell-index="1"></button>
+        <button type="click" class="col-4 box" cell-index="2"></button>
 
-              <div class="col-4 box"></div>
-              <div class="col-4 box"></div>
-              <div class="col-4 box"></div>
+        <button type="click" class="col-4 box" cell-index="3"></button>
+        <button type="click" class="col-4 box" cell-index="4"></button>
+        <button type="click" class="col-4 box" cell-index="5"></button>
 
-              <div class="col-4 box"></div>
-              <div class="col-4 box"></div>
-              <div class="col-4 box"></div>
-            </div>
-          </div>
-        </div>
+        <button type="click" class="col-4 box" cell-index="6"></button>
+        <button type="click" class="col-4 box" cell-index="7"></button>
+        <button type="click" class="col-4 box" cell-index="8"></button>
       </div>
-    </body>
+    </div>
+  </body>
 </html>

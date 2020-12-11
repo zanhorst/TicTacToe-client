@@ -35,9 +35,9 @@ const onUpdateGame = function (event) {
     } else {
       currentPlayer = 'X'
     }
-    $('#message').text('Current player is ' + currentPlayer)
+    $('#message2').text('Current player is ' + currentPlayer)
   } else { // or let the player know that their move was not accepted.
-    $('#message').text('Invalid Move: Spot Taken.')
+    $('#message2').text('Invalid Move: Spot Taken.')
   }
 }
 // const checkWin =

@@ -8,7 +8,7 @@ const gameEvents = require('./game/events')
 // require('./example')
 
 $(() => {
-  $('#game-board').hide()
+  $('#game-board').hide() // hides game board on application start
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#sign-out').on('submit', authEvents.onSignOut)

@@ -12,6 +12,7 @@ const newGame = function (data) {
     data: {}
   })
 }
+// updateGame does not work yet.
 const updateGame = function (cellIndex, currentPlayer) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,

@@ -12,8 +12,7 @@ const newGame = function (data) {
     data: {}
   })
 }
-// updateGame does not work yet.
-const updateGame = function (cellIndex, currentPlayer) {
+const updateGame = function (cellIndex, currentPlayer, gameOver) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
@@ -26,7 +25,7 @@ const updateGame = function (cellIndex, currentPlayer) {
           index: cellIndex,
           value: currentPlayer
         },
-        over: false
+        over: gameOver
       }
     }
   })

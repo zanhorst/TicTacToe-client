@@ -7,7 +7,6 @@ const store = require('./../store')
 let currentPlayer
 // variable defining whether or not the game is over. this is changed only when a game is created, and when a winner is decided, even if the winner is cat.
 let gameOver
-
 // create game event
 const onNewGame = function (event) {
   event.preventDefault()
@@ -18,31 +17,32 @@ const onNewGame = function (event) {
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
 }
-const checkWin = function (event) {
-  if (store.game.cell[0] !== '' && store.game.cell[0] === store.game.cell[1] && store.game.cells[0] === store.game.cell[2]) {
+const checkWin = function () {
+  if (store.game.cells[0] !== '' && store.game.cells[0] === store.game.cells[1] && store.game.cells[0] === store.game.cells[2]) {
+    console.log(store.game.cells[0])
     gameOver = true
-    $('#message').text('The winner is player ' + currentPlayer + '!')
-  } else if (store.game.cell[3] !== '' && store.game.cell[3] === store.game.cell[4] && store.game.cell[3] === store.game.cell[5]) {
+    $('#message3').text('The winner is player ' + currentPlayer + '!')
+  } else if (store.game.cells[3] !== '' && store.game.cells[3] === store.game.cells[4] && store.game.cells[3] === store.game.cells[5]) {
     gameOver = true
-    $('#message').text('The winner is player ' + currentPlayer + '!')
-  } else if (store.game.cell[6] !== '' && store.game.cell[6] === store.game.cell[7] && store.game.cell[6] === store.game.cell[8]) {
+    $('#message3').text('The winner is player ' + currentPlayer + '!')
+  } else if (store.game.cells[6] !== '' && store.game.cells[6] === store.game.cells[7] && store.game.cells[6] === store.game.cells[8]) {
     gameOver = true
-    $('#message').text('The winner is player ' + currentPlayer + '!')
-  } else if (store.game.cell[0] !== '' && store.game.cell[0] === store.game.cell[3] && store.game.cell[0] === store.game.cell[6]) {
+    $('#message3').text('The winner is player ' + currentPlayer + '!')
+  } else if (store.game.cells[0] !== '' && store.game.cells[0] === store.game.cells[3] && store.game.cells[0] === store.game.cells[6]) {
     gameOver = true
-    $('#message').text('The winner is player ' + currentPlayer + '!')
-  } else if (store.game.cell[1] !== '' && store.game.cell[1] === store.game.cell[4] && store.game.cell[1] === store.game.cell[7]) {
+    $('#message3').text('The winner is player ' + currentPlayer + '!')
+  } else if (store.game.cells[1] !== '' && store.game.cells[1] === store.game.cells[4] && store.game.cells[1] === store.game.cells[7]) {
     gameOver = true
-    $('#message').text('The winner is player ' + currentPlayer + '!')
-  } else if (store.game.cell[2] !== '' && store.game.cell[2] === store.game.cell[5] && store.game.cell[2] === store.game.cell[8]) {
+    $('#message3').text('The winner is player ' + currentPlayer + '!')
+  } else if (store.game.cells[2] !== '' && store.game.cells[2] === store.game.cells[5] && store.game.cells[2] === store.game.cells[8]) {
     gameOver = true
-    $('#message').text('The winner is player ' + currentPlayer + '!')
-  } else if (store.game.cell[0] !== '' && store.game.cell[0] === store.game.cell[4] && store.game.cell[0] === store.game.cell[8]) {
+    $('#message3').text('The winner is player ' + currentPlayer + '!')
+  } else if (store.game.cells[0] !== '' && store.game.cells[0] === store.game.cells[4] && store.game.cells[0] === store.game.cells[8]) {
     gameOver = true
-    $('#message').text('The winner is player ' + currentPlayer + '!')
-  } else if (store.game.cell[2] !== '' && store.game.cell[2] === store.game.cell[4] && store.game.cell[2] === store.game.cell[6]) {
+    $('#message3').text('The winner is player ' + currentPlayer + '!')
+  } else if (store.game.cells[2] !== '' && store.game.cells[2] === store.game.cells[4] && store.game.cells[2] === store.game.cells[6]) {
     gameOver = true
-    $('#message').text('The winner is player ' + currentPlayer + '!')
+    $('#message3').text('The winner is player ' + currentPlayer + '!')
   } else {
     gameOver = false
   }
@@ -50,12 +50,10 @@ const checkWin = function (event) {
 const onUpdateGame = function (event) {
   console.log(event)
   const cellIndex = $(event.target).data('cell-index')
-  console.log(cellIndex)
   const value = $(event.target).text()
-  console.log(value, currentPlayer)
   if (value === '') { // if space is empty,
     $(event.target).text(currentPlayer) // then play on that space,
-    checkWin()
+    checkWin() // check if someone won,
     api.updateGame(cellIndex, currentPlayer, gameOver) // update the api,
       .then(ui.updateGameSuccess)
       .catch(ui.updateGameFailure)
@@ -68,8 +66,7 @@ const onUpdateGame = function (event) {
   } else { // OR let the player know that their move was not accepted.
     $('#message2').text('Invalid Move.')
   }
-  console.log(store.game.cell)
-
+  console.log(store.game.cells)
 }
 // win condition example:
 // [0] !== '' && [0] === [1] && [0] === [2]

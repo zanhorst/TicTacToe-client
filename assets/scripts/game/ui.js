@@ -14,6 +14,7 @@ const newGameFailure = function (error) {
 const updateGameSuccess = function (response) {
   $('#message').text('Move successful.')
   console.log(response)
+  store.game = response.game
 }
 const updateGameFailure = function (error) {
   $('#message').text('Update unsuccessful, with error:' + error.responseJSON.message)

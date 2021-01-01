@@ -66,7 +66,7 @@ const onUpdateGame = function (event) {
   } else { // OR let the player know that their move was not accepted.
     $('#message2').text('Invalid Move.')
   }
-  console.log(store.game.cells)
+  // console.log(store.game.cells)
 }
 // win condition example:
 // [0] !== '' && [0] === [1] && [0] === [2]

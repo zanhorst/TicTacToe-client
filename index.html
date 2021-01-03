@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe!</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <h1>Tic Tac Toe</h1>
+    <p id="message"></p>
+    <div class="unauthenticated">
+      <form id="sign-up">Sign up:
+        <label for="inputEmail">Email Address:</label>
+        <input type="email" placeholder="Enter email" name="credentials[email]">
+        <label for="inputPassword">Password:</label>
+        <input type="password" placeholder="Enter Password" name="credentials[password]">
+        <label for="inputPasswordConfirm">Confirm password:</label>
+        <input type="password" placeholder="Confirm password" name="credentials[password_confirmation]">
+        <button type="submit">Sign up</button>
+      </form>
+      <form id="sign-in">Sign in:
+        <label for="inputEmail">Email address</label>
+        <input type="email" placeholder="Enter Email" name="credentials[email]">
+        <label for="inputPassword">Password</label>
+        <input type="password" placeholder="Enter Password" name="credentials[password]">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="authenticated">
+      <form id="change-password">Change Password:
+        <input type="password" placeholder="Old Password" name="passwords[old]">
+        <input type="password" placeholder="New Password" name="passwords[new]">
+        <button type="submit">Submit</button>
+      </form>
+      <form id="sign-out">Sign out:
+        <button type="submit">Sign Out</button>
+      </form>
+      <form id="new-game">
+        <button type="click">Create Game</button>
+      </form>
+      <form id="show-games">
+        <button type="click">Total Games Played</button>
+      </form>
+      <p id="message2"></p>
+      <div id="game-board" class="row">
+        <button id="button" type="click" class="col-4 box" data-cell-index="0"></button>
+        <button id="button" type="click" class="col-4 box" data-cell-index="1"></button>
+        <button id="button" type="click" class="col-4 box" data-cell-index="2"></button>
+
+        <button id="button" type="click" class="col-4 box" data-cell-index="3"></button>
+        <button id="button" type="click" class="col-4 box" data-cell-index="4"></button>
+        <button id="button" type="click" class="col-4 box" data-cell-index="5"></button>
+
+        <button id="button" type="click" class="col-4 box" data-cell-index="6"></button>
+        <button id="button" type="click" class="col-4 box" data-cell-index="7"></button>
+        <button id="button" type="click" class="col-4 box" data-cell-index="8"></button>
+      </div>
+      <p id="message3"></p>
+    </div>
+  </body>
+</html>

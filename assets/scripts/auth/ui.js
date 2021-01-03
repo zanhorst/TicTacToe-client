@@ -3,6 +3,7 @@ const store = require('./../store.js')
 $('.authenticated').hide()
 const signUpSuccess = function (response) {
   $('#message').text('Signed up. Please log in.')
+  $('form').trigger('reset')
 }
 
 const signUpFailure = function (error) {

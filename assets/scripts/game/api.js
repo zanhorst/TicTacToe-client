@@ -9,7 +9,18 @@ const newGame = function (data) {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    data: {}
+    data: {
+      games: {}
+    }
+  })
+}
+const showGames = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
 const updateGame = function (cellIndex, currentPlayer, gameOver) {
@@ -32,5 +43,6 @@ const updateGame = function (cellIndex, currentPlayer, gameOver) {
 }
 module.exports = {
   newGame,
-  updateGame
+  updateGame,
+  showGames
 }
